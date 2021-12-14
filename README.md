@@ -19,11 +19,20 @@
 ![update-product](https://user-images.githubusercontent.com/67188972/145993690-be5a76bb-4728-4c5d-a766-9d809f0a76d0.png)
 ## Customer Side
 #### Home
-
+![customer-home](https://user-images.githubusercontent.com/67188972/145995207-5ba85d18-6ade-44d2-8e3a-34a2547b7b6c.png)
 #### Place Order
-
+![place-order](https://user-images.githubusercontent.com/67188972/145995246-559e1518-1f2a-450d-921e-d9cc779099bc.png)
+#### Account Settings
+![account](https://user-images.githubusercontent.com/67188972/145995325-9c7c9d80-6083-48c4-9af1-28361f0be316.png)
 ## Registration and Reset password
 #### Registration Page
-
+![login](https://user-images.githubusercontent.com/67188972/145995375-d8797818-8afc-4a1d-be1e-73ef2cccf4e6.png)
+![register](https://user-images.githubusercontent.com/67188972/145995382-4688bccc-0275-42ac-94db-2e88ffcbd22b.png)
 #### Reset Password
-
+![start](https://user-images.githubusercontent.com/67188972/145996187-2da5d5e1-fce3-4cf5-8bce-3d1db4df5419.png)
+-
+![processing](https://user-images.githubusercontent.com/67188972/145996185-64efd519-46ec-441e-8ca5-bcdc796069b0.png)
+-
+![processed](https://user-images.githubusercontent.com/67188972/145996182-c7a9ecda-246c-45a4-86e4-9003b6565439.png)
+-
+![completed](https://user-images.githubusercontent.com/67188972/145996179-f41116c0-fa51-4b8b-b7ed-06eeb135a295.png)
