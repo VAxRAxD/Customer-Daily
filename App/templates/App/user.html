@@ -1,0 +1,36 @@
+{%  extends 'App/home.html' %}
+{% block content %}
+{%  include 'App/status.html' %}
+
+<div class="container">
+	<div class="row justify-content-around">
+		<div class="col-12 col-sm-12 col-md-12 col-lg-12 details">
+			<table class="table">
+				<h3 class="txt-coral txt-underlined">CUSTOMERS:</h5>
+				<thead class="header-dark">
+				  <tr class="txt-center">
+					<th>Product</th>
+					<th>Date Orderd</th>
+					<th>Status</th>
+				  </tr>
+				</thead>
+				<tbody class="txt-coral">
+					{% for order in orders %}
+					<tr class="txt-center">
+						<td>{{order.product}}</td>
+						<td>{{order.date_created}}</td>
+						<td>{{order.status}}</td>
+				  </tr>
+				  {% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<br>
+<section style="display: grid; place-items: center;">
+	<a class="btn btn-orange" href="{% url 'create_order' customer_id %}">Place Order</a>
+</section>
+
+
+{% endblock content %}

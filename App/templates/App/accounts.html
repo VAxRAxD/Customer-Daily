@@ -1,0 +1,48 @@
+{%  extends 'App/home.html' %}
+{% load static %}
+{% block content %}
+<br>
+<div class="container account">
+	<p class="txt-dark" style="text-align: center;">Account Settings</p>
+	{% if request.user.is_staff %}
+	<img class="img-fluid profile-pic" src="{{customer.profile_pic.url}}" >
+	{% else %}
+	<img class="img-fluid profile-pic" src="{{request.user.customer.profile_pic.url}}" >
+	{% endif %}
+	<br>
+	<form method="POST" action="" enctype="multipart/form-data" class="txt-dark" style="text-align: center;">
+		{% csrf_token %}
+		{{form.as_p}}
+		<hr>
+		<div class="update-profile">
+			<input class="btn btn-sm btn-success" type="submit" name="Update Information" value="Update Information">
+		</div>
+	</form>
+	<br>
+</div>
+<!-- <div class="row">
+	<div class="col-md-3">
+		<div class="card card-body" style="height: 380px;">
+			<h3 style="text-align: center">Account Settings</h3>
+			<hr>
+			{% if request.user.is_staff %}
+			<img class="profile-pic" src="{{customer.profile_pic.url}}" >
+			{% else %}
+			<img class="profile-pic" src="{{request.user.customer.profile_pic.url}}" >
+			{% endif %}
+		
+		</div>
+	</div>
+			<form method="POST" action="" enctype="multipart/form-data">
+				{% csrf_token %}
+				<h5>{{form.as_p}}</h5>
+				<hr>
+			<center><input class="btn btn-info" type="submit" name="Update Information" value="Update Information"></center>
+			</form>
+		</div>
+	</div>
+</div> -->
+
+
+
+{% endblock %}

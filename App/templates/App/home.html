@@ -1,0 +1,133 @@
+{%  extends 'App/layout.html' %}
+
+{% block content %}
+
+{%  include 'App/status.html' %}
+
+<br>
+<div class="container">
+	<div class="row justify-content-around">
+		<div class="col-12 col-sm-12 col-md-6 col-lg-6 details">
+			<table class="table">
+				<h3 class="txt-coral txt-underlined">CUSTOMERS:</h5>
+				<thead class="header-dark">
+				  <tr class="txt-center">
+					<th class="txt-orange"></th>
+					<th class="txt-orange">Name</th>
+					<th class="txt-orange">Phone</th>
+					<th class="txt-orange"></th>
+				  </tr>
+				</thead>
+				<tbody class="txt-coral">
+					{% for customer in customers %}
+					<tr class="txt-center">
+					<td><a class="btn btn-sm btn-orange" href="{% url 'customer' customer.id %}">Details</a></td>
+					<td>{{customer.name}}</td>
+					<td>{{customer.phone}}</td>
+					<td><a class="btn btn-sm btn-coral" href="{% url 'delete_customer' customer.id %}">Delete</a></td>
+				  </tr>
+				  {% endfor %}
+				</tbody>
+			</table>
+		</div>
+		
+
+		<div class="col-12 col-sm-12 col-md-6 col-lg-6 details">
+			<table class="table">
+				<h3 class="txt-coral txt-underlined">Orders Pending:</h5>
+				<thead class="header-dark">
+					<tr class="txt-center">
+					<th class="txt-orange">Customer</th>
+					<th class="txt-orange">Product</th>
+					<th class="txt-orange">Quantity</th>
+					<th class="txt-orange">Date</th>
+					<th class="txt-orange"></th>
+				  </tr>
+				</thead>
+				<tbody class="txt-coral">
+					{% for order in orders %}
+					{% if order.status == "Pending" %}
+					<tr class="txt-center">
+						<td>{{order.customer.name}}</td>
+					<td>{{order.product.name}}</td>
+					<td>{{order.quantity}}</td>
+					<td>{{order.date_created}}</td>
+					<td><a class="btn btn-sm btn-orange" data-bs-toggle="modal" data-bs-target="#editModal-{{order.id}}">Update</a></td>
+				  </tr>
+				  	<!-- MODAL -->
+					{% include 'App/update_order.html' %}
+					<!-- MODAL END -->
+				  {% endif %}
+				  
+				  {% endfor %}
+				</tbody>
+			</table>
+		</div>
+
+		<div class="col-12 col-sm-12 col-md-6 col-lg-6 details">
+			<table class="table">
+				<h3 class="txt-coral txt-underlined">Orders Out for Delivery:</h5>
+				<thead class="header-dark">
+					<tr class="txt-center">
+					<th class="txt-orange">Customer</th>
+					<th class="txt-orange">Product</th>
+					<th class="txt-orange">Quantity</th>
+					<th class="txt-orange">Date</th>
+					<th class="txt-orange"></th>
+				  </tr>
+				</thead>
+				<tbody class="txt-coral">
+					{% for order in orders %}
+					{% if order.status == "Out for delivery" %}
+					<tr class="txt-center">
+						<td>{{order.customer.name}}</td>
+					<td>{{order.product.name}}</td>
+					<td>{{order.quantity}}</td>
+					<td>{{order.date_created}}</td>
+					<td><a class="btn btn-sm btn-orange" data-bs-toggle="modal" data-bs-target="#editModal-{{order.id}}">Update</a></td>
+				  </tr>
+				  <!-- MODAL -->
+					{% include 'App/update_order.html' %}
+					<!-- MODAL END -->
+				  {% endif %}
+				  {% endfor %}
+				</tbody>
+			</table>
+		</div>
+
+		<div class="col-12 col-sm-12 col-md-6 col-lg-6 details">
+			<table class="table">
+				<h3 class="txt-coral txt-underlined">Orders Delivered:</h5>
+				<thead class="header-dark">
+					<tr class="txt-center">
+					<th class="txt-orange">Customer</th>
+					<th class="txt-orange">Product</th>
+					<th class="txt-orange">Quantity</th>
+					<th class="txt-orange">Date</th>
+					<th class="txt-orange"></th>
+				  </tr>
+				</thead>
+				<tbody class="txt-coral">
+					{% for order in orders %}
+					{% if order.status == "Delivered" %}
+					<tr class="txt-center">
+					<td>{{order.customer.name}}</td>
+					<td>{{order.product.name}}</td>
+					<td>{{order.quantity}}</td>
+					<td>{{order.date_created}}</td>
+					<td><a class="btn btn-sm btn-orange" data-bs-toggle="modal" data-bs-target="#editModal-{{order.id}}">Update</a></td>
+				  </tr>
+				  <!-- MODAL -->
+					{% include 'App/update_order.html' %}
+					<!-- MODAL END -->
+				  {% endif %}
+				  {% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<br>
+
+
+{% endblock %}

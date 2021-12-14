@@ -1,0 +1,26 @@
+<div class="modal fade" id="editModal-{{order.id}}" tabindex="-1" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Update {{order.customer.name}}'s order for {{order.product.name}}</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="">
+          {% csrf_token %}
+          <label class="txt-dark" for="status">Order Status:</label>
+          <input type="number" name="id" style="display:none;" value="{{order.id}}">
+          <select name="status">
+            <option class="txt-coral" value="Pending">Pending</option>
+            <option class="txt-coral" value="Out for delivery">Out for delivery</option>
+            <option class="txt-coral" value="Delivered">Delivered</option>
+          </select> 
+          <div class="modal-footer">
+            <a class="btn btn-orange" data-bs-dismiss="modal">Close</a>
+            <input type="submit" class="btn btn-sucess" value="Save"/>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

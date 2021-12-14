@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: #EAEAEA !important;
+}
+.container{
+    width: 90vw;
+}
+.card{
+    padding: 0 0;
+    margin: 1rem 0;
+}
+.card-dark{
+    background-color: #252A34;
+}
+.card-coral{
+    background-color: #FF2E63;
+}
+.details{
+    height: 40vh;
+    overflow-y: scroll;
+    margin-bottom: 3rem;
+}
+.table{
+    padding: 0 0;
+}
+.header-dark{
+    background-color: #252A34;
+}
+th{
+    font-weight: 500;
+}
+.txt-coral{
+    color: #FF2E63;
+    font-size: 1.6rem;
+}
+.txt-orange{
+    color: #08D9D6;
+    font-size: 1.6rem;
+}
+.txt-dark{
+    color: #252A34;
+    font-size: 1.6rem;
+}
+.txt-light{
+    color: #EAEAEA;
+    font-size: 1.6rem;
+}
+.nav-txt{
+    color: #EAEAEA;
+    font-size: 1.4rem;
+}
+.txt-center{
+    text-align: center;
+}
+.txt-underlined{
+    border-bottom: 2px solid #08D9D6;
+}
+.btn-coral{
+    background-color: #FF2E63;
+    color:#252A34;
+    font-size: 1.6rem;
+}
+.btn-orange{
+    background-color: #08D9D6;
+    color:#252A34;
+    font-size: 1.6rem;
+}
+.btn-sucess{
+    background-color: #2FDD92;
+    color:#252A34;
+    font-size: 1.6rem;
+}
+.graph{
+    margin-bottom: 2rem;
+}
+.operations{
+    display: flex;
+    justify-content: center;
+}
+.operations a{
+    margin:  0 1rem;
+}
+.modal-dialog {
+    max-width: 320px !important;
+}
+select{
+    height: 30px;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+input,textarea{
+    font-size: 1.4rem !important;
+}
+.form-content{
+    display: grid;
+    place-items: center;
+}
+.form-content img{
+    width: 40%;
+}
+.greet{
+    padding-right: 2rem;
+    padding-top: 0.5rem;
+}
+.account,.purchase{
+    display: grid;
+    place-items: center;
+    box-shadow:  0 2px 4px rgb(153, 152, 152)!important;
+	outline: 0px !important;
+}
+.purchase-order,.update-profile{
+    display: flex;
+    justify-content: center;
+}
+.profile-pic{
+    width: 20%;
+    border-radius: 50%;
+}
+@media (min-width: 320px) and (max-width: 500px){
+    html{
+        font-size: 50%;
+    }
+    .profile-pic{
+        width: 50%;
+    }
+}
+@media (min-width: 501px) and (max-width: 1023px){
+    html{
+        font-size: 55%;
+    }
+    .profile-pic{
+        width: 30%;
+    }
+}

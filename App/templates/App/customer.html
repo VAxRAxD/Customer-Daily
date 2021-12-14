@@ -1,0 +1,45 @@
+{% extends 'App/layout.html' %}
+{% block content %}
+
+<br>
+<div class="container">
+	<div class="row justify-content-around">
+		<div class="col-12 col-sm-12 col-md-12 col-lg-12 details">
+			<table class="table">
+				<thead class="header-dark">
+				  <tr class="txt-center">
+					<th class="txt-orange">Product</th>
+					<th class="txt-orange">Category</th>
+					<th class="txt-orange">Quantity</th>
+					<th class="txt-orange">Date ordered</th>
+					<th class="txt-orange">Status</th>
+					<th class="txt-orange"></th>
+					<th class="txt-orange"></th>
+				  </tr>
+				</thead>
+				<tbody class="txt-coral">
+					{% for order in orders %}
+					<tr class="txt-center">
+						<td>{{order.product}}</td>
+						<td>{{order.product.category}}</td>
+						<td>{{order.quantity}}</td>
+						<td>{{order.date_created}}</td>
+						<td>{{order.status}}</td>
+				  </tr>
+				  {% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<br>
+	<section class="operations">
+		<a class="btn btn-sm btn-coral" href="{% url 'account' id %}">View customer</a>
+		<a class="btn btn-sm btn-orange" data-bs-toggle="modal" data-bs-target="#editModal">Search</a>
+		<!-- MODAL -->
+		{% include 'App/searchorder.html' %}
+		<!-- MODAL END -->
+	</section>
+</div>
+
+
+{% endblock %}

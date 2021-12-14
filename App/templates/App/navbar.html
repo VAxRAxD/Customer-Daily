@@ -1,0 +1,37 @@
+{% load static %}
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <img src="{% static 'images/logo.png' %}">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          {% if request.user.is_staff %}
+        <li class="nav-item active">
+          <a class="nav-link nav-txt" href="{% url 'home' %}">Dashboard</a>
+        </li>
+        {% else %}
+        <li class="nav-item active">
+          <a class="nav-link nav-txt" href="{% url 'user' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-txt" href="{% url 'account' request.user.customer.id %}">Settings</a>
+        </li>
+        {% endif %}
+        <li class="nav-item">
+          <a class="nav-link nav-txt" href="{% url 'product' %}">Products</a>
+        </li>
+        {% if request.user.is_staff %}
+        <li class="nav-item">
+          <a class="nav-link nav-txt" href="{% url 'sales' %}">Sales Report</a>
+        </li>
+        {% endif %}
+        </ul>
+        <div class="d-flex">
+          <span class="txt-coral greet">Hello, {{request.user}}</span>
+          <span><a  class="btn btn-sm btn-sucess" href="{% url 'logout' %}"> Logout</a></span>
+        </div>
+      </div>
+    </div>
+  </nav>

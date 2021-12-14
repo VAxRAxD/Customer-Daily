@@ -1,0 +1,20 @@
+{%  extends 'App/home.html' %}
+{% load static %}
+{% block content %}
+<br>
+<div class="container purchase">
+	<br>
+	<form action="" method="POST" class="txt-dark">
+		{% csrf_token %}
+		{{ formset.management_form}}
+		{% for form in formset %}
+			{{form}}
+			<hr>
+		{% endfor %}
+		<div class="purchase-order">
+			<input class="btn btn-sm btn-sucess" type="submit" name="Submit" value="Create Order">
+		</div>
+	</form>
+	<br>
+</div>
+{% endblock %}

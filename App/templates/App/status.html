@@ -1,0 +1,40 @@
+<br>
+
+<div class="container">
+	<div class="row justify-content-around">
+		<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+			<div class="card">
+				<h5 class="card-header card-dark txt-orange txt-center">Total Orders</h5>
+				<div class="card-body card-coral txt-center">
+				<h5 class="card-title txt-light">{{total_orders}}</h5>
+				</div>
+			</div>
+		</div>
+		{% if request.user.is_staff %}
+		<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+			<div class="card">
+				<h5 class="card-header card-dark txt-orange txt-center">Total Customers</h5>
+				<div class="card-body card-coral txt-center">
+				<h5 class="card-title txt-light">{{total_customers}}</h5>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+			<div class="card">
+				<h5 class="card-header card-dark txt-orange txt-center">Pending</h5>
+				<div class="card-body card-coral txt-center">
+				<h5 class="card-title txt-light">{{pending}}</h5>
+				</div>
+			</div>
+		</div>
+		<div class="col-6 col-sm-6 col-md-3 col-lg-3">
+			<div class="card">
+				<h5 class="card-header card-dark txt-orange txt-center">Out for Delivery</h5>
+				<div class="card-body card-coral txt-center">
+				<h5 class="card-title txt-light">{{out_for_delivery}}</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

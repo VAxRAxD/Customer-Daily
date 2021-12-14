@@ -1,0 +1,44 @@
+{% extends 'App/layout.html' %}
+{% block content %}
+<br>
+<div class="container">
+	<div class="row justify-content-around">
+		<div class="col-12 col-sm-12 col-md-12 col-lg-12">
+			<table class="table">
+				<thead class="header-dark">
+				  <tr class="txt-center">
+					<th class="txt-orange">Product</th>
+					<th class="txt-orange">Category</th>
+					<th class="txt-orange">Price</th>
+					<th class="txt-orange">Net Wt.</th>
+					<th class="txt-orange">Description</th>
+					{% if request.user.is_staff %}
+					<th class="txt-orange"></th>
+					<th class="txt-orange"></th>
+					{% endif %}
+				  </tr>
+				</thead>
+				<tbody class="txt-coral">
+					{% for i in products %}
+						<tr>
+							<td>{{i.name}}</td>
+							<td>{{i.category}}</td>
+							<td>{{i.price}}</td>
+							<td>{{i.weight}}</td>
+							<td>{{i.description}}</td>
+							{% if request.user.is_staff %}
+							<td><a class="btn btn-sm btn-orange" data-bs-toggle="modal" data-bs-target="#editModal-{{i.id}}">Update</a></td>
+							<td><a class="btn btn-sm btn-coral" href="{% url 'delete_product' i.id %}">Delete</a></td>
+							{% endif %}
+						</tr>
+							<!-- MODAL -->
+							{% include 'App/update_product.html' %}
+							<!-- MODAL END -->
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}

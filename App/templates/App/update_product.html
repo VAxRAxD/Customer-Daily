@@ -1,0 +1,35 @@
+<div class="modal fade" id="editModal-{{i.id}}" tabindex="-1" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Update {{i.name}}</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="">
+          {% csrf_token %}
+          <input type="number" name="id" style="display:none;" value="{{i.id}}">
+          
+          <label class="txt-dark" for="name" class="form-label">Product</label>
+          <input type="text" name="name" class="form-control" aria-describedby="nameHelpBlock" value="{{i.name}}">
+
+          <label class="txt-dark" for="category" class="form-label">Category</label>
+          <input type="text" name="category" class="form-control" aria-describedby="categoryHelpBlock" value="{{i.category}}">
+
+          <label class="txt-dark" for="price" class="form-label">Price</label>
+          <input type="text" name="price" class="form-control" aria-describedby="priceHelpBlock" value="{{i.price}}">
+          
+          <label class="txt-dark" for="weight" class="form-label">Net Wt.</label>
+          <input type="text" name="weight" class="form-control" aria-describedby="weightHelpBlock" value="{{i.weight}}">
+
+          <label class="txt-dark" for="desp" class="form-label">Description</label>
+          <textarea name="desp" class="form-control" aria-label="With textarea">{{i.description}}</textarea>
+          <div class="modal-footer">
+            <a class="btn btn-orange" data-bs-dismiss="modal">Close</a>
+            <input type="submit" class="btn btn-sucess" value="Save"/>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
