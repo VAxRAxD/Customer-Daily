@@ -1,6 +1,6 @@
 # Clientele-Manager
 - Website for managing the relationship between a shop and its customers. Shop owner can administer its interactions with its customers, managing the customer's orders and the shop's product. Created a customized admin panel with interactive design for CRUD operations.
-- Stack : HTML, CSS, Java-script, Python, Django, SQLite, Zing-Charts
+> Technologies Used : HTML, CSS, Java-script, Python, Django, SQLite, Zing-Charts
 ## Admin Side
 #### Dashboard
 ![Dashboard](https://user-images.githubusercontent.com/67188972/145993246-56b428fb-92f8-4dd8-9d7f-aa77f170634a.png)
